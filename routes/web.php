@@ -20,9 +20,10 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleawre('verified');
-Route::resource('tarefa', TarefaController::class)->middleawre('verified');
+Route::get('tarefa/exportacao/{formato}', [\App\Http\Controllers\TarefaController::class, 'exportacao'])->name('tarefa.exportacao');
+//estou comentando a rota home, pois defini outra rota como default no RouteServiceProvider
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+Route::resource('tarefa', TarefaController::class)->middleware('verified');
 Route::get("/mail", function(){
     return new MensagemTesteEmail;
 });
