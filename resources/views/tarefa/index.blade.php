@@ -15,7 +15,8 @@
                                 <a href="{{ route('tarefa.create') }}" class="mr-5">Novo</a>
                                 <a href="{{ route('tarefa.exportacao', ['formato' => 'xlsx']) }}" class="mr-5">Exportar XLSX</a>
                                 <a href="{{ route('tarefa.exportacao', ['formato' => 'csv']) }}" class="mr-5">Exportar CSV</a>
-                                <a href="{{ route('tarefa.exportacao', ['formato' => 'pdf']) }}">Exportar PDF</a>
+                                <a href="{{ route('tarefa.exportacao', ['formato' => 'pdf']) }}" class="mr-5">Exportar PDF</a>
+                                <!--<a href="#">Exportar domPDF</a>-->
                             </div>
                         </div>
                     </div>
